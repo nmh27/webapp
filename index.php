@@ -1,5 +1,11 @@
-<html>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="ust-8">
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="path-to-javascript-file.js"></script>
+</head>
 <body>
 	<div>
 		<form id="userinput">
