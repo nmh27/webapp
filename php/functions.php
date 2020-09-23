@@ -15,13 +15,36 @@ function dbconnect(){
   }
 }
 
-function verifyRequest(){
+/*
+  FUNCTION: verifyRequest
+
+  PARAMETERS: Request php object
+  RETURNS:  true if request passed verification
+            false if failed
+*/
+function verifyRequest($req){
 
 }
 
-function findStockFrame(){
+/*
+  FUNCTION: findStockFrames
 
+  PARAMETERS: Request(php object), CONN(mySQL connection)
+  RETURNS:  List of Frames that match the REQUEST
+*/
+function findStockFrames($req){
+  //<---create mySQL query from the request
+  //    for bike geometrey and stock stem
+
+  //<---query the Database
+
+  //<---for all rows returned from reqesut
+    //<----create frame object (is defined at bottom of file)
+    //<----add frame to a list
+
+  //<---returns list of frames
 }
+
 
 function findParts(){
 
@@ -42,10 +65,10 @@ function sendResults(){
 /*
   FUNCTION: calculateHXY
 
-  Parameters: FRAME(class)
+  PARAMETERS: FRAME(class)
   returns list HXYS for stock stem ONLY! array(array())
 
-  Parameters: FRAME(class), stems(array)
+  PARAMETERS: FRAME(class), stems(array)
   returns list of HXYS for each stem (array(array(array()))
   NOTE: stems(array) input FORMAT is [stemID, Angle, Length, isFlippable]
 */
@@ -120,7 +143,7 @@ function calculateHXY($f,$stems=null){
 }
 
 /*
-CLASS FRAME
+CLASS: FRAME
 values from FRAME GEOMETREY
 */
 class Frame{
@@ -151,6 +174,9 @@ class Frame{
     $spacerMin = $sMin;
     $spacerMax = $sMax;
     $stockConfigs = calculateHXY($this);
+  }
+  function getStockConfigs(){
+    return $this->$stockConfigs;
   }
 }
 ?>
