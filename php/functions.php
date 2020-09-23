@@ -19,12 +19,14 @@ function dbconnect(){
   FUNCTION: verifyRequest
 
   PARAMETERS: Request php object
+  NOTE: also sets the global variables targetsx,y and tilt in find.php
   RETURNS:  true if request passed verification
             false if failed
 */
 function verifyRequest($req){
 
 }
+
 
 /*
   FUNCTION: findStockFrames
@@ -46,19 +48,37 @@ function findStockFrames($req){
 }
 
 
-function findParts(){
+/*
+  FUNCTION: findConfig
+  PARAMETERS: FRAMES(class)
+  RETURNS: the ids of all parts of config?
+
+  PARAMETERS: FRAMES(class), STEMS(array(array()))
+  RETURNS: the id of all parts of config?
+*/
+function findConfig($frames,$stems=null){
+  //<---if stems param provided
+    //<----$listofstems = calcluateHXY(frame,stems)
+
+  //<----create query for request of configs
+  //return results
+}
+
+
+function findParts($req){
 
 }
 
-function findConfig(){
+/*
+  FUNCTION: sendFaildVer
 
-}
-
+  what to do when verification fails to user
+*/
 function sendFaildVer(){
 
 }
 
-function sendResults(){
+function sendResults($configs){
 
 }
 
@@ -116,8 +136,9 @@ function calculateHXY($f,$stems=null){
 
         $HX = $X+$FrameX;
         $HY = $Y+$FrameY;
-
-        $stemHXY[]=(array($HX,$HY,$s[0],$sA,$sL,$flipped,$i));
+        $ao = $TargetX - $HX;
+        $as = $TargetY - $HY;
+        $stemHXY[]=(array($ao,$as,$HX,$HY,$s[0],$sA,$sL,$flipped,$i));
 
         //if is flippable
         //repeat loop with it Angle flipped
