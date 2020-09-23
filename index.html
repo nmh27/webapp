@@ -1,50 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="ust-8">
+  <!--
+  HEAD:
+  is where meta data and files the webpage required can be palced
+  -->
+  <meta charset="ust-8">
+  <!--TITLE NOTE: is dispalyed in tab header-->
+  <title></title>
 
-    <title></title>
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="js/form.js"></script>
+  <!--STYLESHEETS NOTE:bootstrapCDN must comebefore any other stylesheets-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!--SCRIPTS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--jQuery via google's CDN-->
+  <script type="text/javascript" src="js/form.js"></script> <!-- our js functions-->
 
 </head>
 <body>
-	<div>
-		<form id="userinput" onchange="formUpdate()">
-			<label for="padx">Pad X: </label>
-			<input type="text" id="padx" name="padx"><br>
-			
-			<label for="pady">Pad Y: </label>
-			<input type="text" id="pady" name="pady"><br>
-			
-			<label for="tilt">Tilt: </label>
-			<input type="text" id="tilt" name="tilt"><br>
-			
-			<label for="padz">Pad Z: </label>
-			<input type="text" id="padz" name="padz"><br>
-			
-			<label for="gripz">Grip Z: </label>
-			<input type="text" id="gripz" name="gripz"><br>
-			
-			<label for="extlength">Extention Length: </label>
-			<input type="text" id="extlength" name="extlength"><br>
-			
-			<label for="extrise">Extention Rise: </label>
-			<input type="text" id="extrise" name="extrise"><br>
-			
-			<label for="gripangle">Grip Angle: </label>
-			<input type="text" id="gripangle" name="gripangle"><br>
+  <!-- BODY: is the content dispalyed on webpage -->
+  <div >
+    <form id="userinput" onsubmit="submitForm()">
+      <label for="padx">Pad X: </label>
+      <input type="text" id="padx" name="padx"><br>
 
-			<input type="submit" value="Submit">
-			
-		</form>	
+      <label for="pady">Pad Y: </label>
+      <input type="text" id="pady" name="pady"><br>
 
+      <label for="tilt">Tilt: </label>
+      <input type="text" id="tilt" name="tilt"><br>
 
-	</div>
+      <label for="padz">Pad Z: </label>
+      <input type="text" id="padz" name="padz"><br>
 
+      <label for="gripz">Grip Z: </label>
+      <input type="text" id="gripz" name="gripz"><br>
 
+      <label for="extlength">Extention Length: </label>
+      <input type="text" id="extlength" name="extlength"><br>
 
+      <label for="extrise">Extention Rise: </label>
+      <input type="text" id="extrise" name="extrise"><br>
 
+      <label for="gripangle">Grip Angle: </label>
+      <input type="text" id="gripangle" name="gripangle"><br>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+
+  <!-- BootstrapCDN dependencies NOTE: must be in this order located at the end of file -->
+  <!--BOOTSTRAP EXAMPLES: https://getbootstrap.com/docs/4.5/examples/ -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
