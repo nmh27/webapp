@@ -9,21 +9,25 @@ function dbconnect(){
   try {
     $conn = new PDO("mysql:host=$servername;
     dbname=$dbname", $username, $password);
+    return $conn
   } catch(PDOException $e) {
     echo "Database Connection Error: " . $e->getMessage();
   }
-  return $conn
 }
 
 function verifyRequest(){
 
 }
 
-function searchForParts(){
+function findStockFrame(){
 
 }
 
-function searchForConfig(){
+function findParts(){
+
+}
+
+function findConfig(){
 
 }
 
@@ -35,6 +39,35 @@ function sendResults(){
 
 }
 
+class Frame{
+  public $id;
+  public $hTubeAngle;
+  public $hsetCovr;
+  public $frameX;
+  public $frameY;
+
+  public $sStemAngle;
+  public $sStemLength;
+  public $sStemIsFlippable;
+
+  public $spacerMin;
+  public $spacerMax;
+
+  public $stockConfigs = array();
+
+  function __construct($i,$hTA,$hC,$fX,$fY,$sSA,$sSL,$sSIF,$sMin,$sMax) {
+    $id = $i;
+    $hTubeAngle = $hTA;
+    $hsetCovr = $hC;
+    $frameX = $fX;
+    $frameY = $fY;
+    $sStemAngle = $sSA;
+    $sStemLength = $sSL;
+    $sStemIsFlippable = $sSIF;
+    $spacerMin = $sMin;
+    $spacerMax = $sMax;
+
+  }
   function calculateHXY($f,$stems=null){
     //for frames that match filters
     //a bike that met other inputs aswell(filters) example
